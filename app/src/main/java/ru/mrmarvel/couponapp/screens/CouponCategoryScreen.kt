@@ -40,8 +40,6 @@ fun CouponCategoryScreen(couponCategory: CouponCategory,
                 }
             }
         }
-
-
     }
 }
 

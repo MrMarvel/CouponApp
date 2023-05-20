@@ -37,46 +37,45 @@ class MainActivity : ComponentActivity() {
     private lateinit var navController: NavHostController
     private val sharedViewModel: SharedViewModel by viewModels()
 
-    companion object {
-        private var pv_resources: Resources? = null
-        fun getAppResources(): Resources? {
-            return pv_resources
-        }
-    }
     @OptIn(ExperimentalMaterial3Api::class)
-    override fun onCreate(savedInstanceState: Bundle?) {
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        pv_resources = resources
+        MainResources.pv_resources = resources
         setContent {
             CouponAppTheme {
                 navController = rememberNavController()
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Scaffold(
-                        topBar = {TopSearchBar()},
-                        bottomBar =
-                        {
-                            BottomNavigationBar(
-                                navController = navController,
-                                sharedViewModel = sharedViewModel
-                            )
-                        },
-                    ) { padding ->
-                        padding
-                        SetupNavigation(
-                            Modifier.padding(padding),
-                            navController = navController,
-                            sharedViewModel = sharedViewModel
-                        )
-                    }
-                }
+                NavigationPanel(navController = navController, sharedViewModel = sharedViewModel)
             }
         }
     }
 
+}
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun NavigationPanel(navController: NavHostController, sharedViewModel: SharedViewModel) {
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Scaffold(
+            topBar = {TopSearchBar()},
+            bottomBar =
+            {
+                BottomNavigationBar(
+                    navController = navController,
+                    sharedViewModel = sharedViewModel
+                )
+            },
+        ) { padding ->
+            padding
+            SetupNavigation(
+                Modifier.padding(padding),
+                navController = navController,
+                sharedViewModel = sharedViewModel
+            )
+        }
+    }
 }
 sealed class NavigationItem(val route: String, val label:String, val icon: ImageVector) {
 
