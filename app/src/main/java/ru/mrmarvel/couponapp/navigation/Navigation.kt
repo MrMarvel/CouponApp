@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import ru.mrmarvel.couponapp.navigation.destinations.homeScreen
 import ru.mrmarvel.couponapp.navigation.destinations.shopScreen
+import ru.mrmarvel.couponapp.util.Constants
 import ru.mrmarvel.couponapp.util.Constants.NAV_SHOP_SCREEN
 import ru.mrmarvel.couponapp.viewmodels.SharedViewModel
 
@@ -22,7 +23,12 @@ fun SetupNavigation(
         navController = navController,
         startDestination = NAV_SHOP_SCREEN) {
         shopScreen(
-            sharedViewModel = sharedViewModel
+            sharedViewModel = sharedViewModel,
+            navigateToCouponCategoryScreen = { couponCategory ->
+                navController.navigate(
+                    route = Constants.NAV_COUPON_CATEGORY_SCREEN
+                        .replace("", couponCategory.id.toString()))
+            }
         )
         homeScreen(sharedViewModel)
     }
