@@ -10,5 +10,6 @@ data class CouponCategory(
     var longName: String? = null,
     var description: String? = null,
     var image_url: String? = null,
-    var best_expire_date: Date? = null
+    var best_expire_date: Date? = null,
+    var price: Int? = null,
 )
