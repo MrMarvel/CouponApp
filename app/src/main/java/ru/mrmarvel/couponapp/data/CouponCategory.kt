@@ -1,9 +1,12 @@
 package ru.mrmarvel.couponapp.data
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.Calendar
 import java.util.Date
-
+@Entity
 data class CouponCategory(
+    @PrimaryKey
     val id: Int,
     var shopName: String,
     var shortName: String,

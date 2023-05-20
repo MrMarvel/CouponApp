@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ru.mrmarvel.couponapp.R
 import ru.mrmarvel.couponapp.data.CouponCategory
@@ -54,6 +55,7 @@ fun HotCouponCategoryListItem(
                     )
                     Image(
                         modifier = Modifier
+                            .sizeIn(Dp.Unspecified, Dp.Unspecified, 256.dp, 256.dp)
                             .aspectRatio(1f)
                             .clip(CircleShape)
                             .border(2.dp, Color.Black, CircleShape),
