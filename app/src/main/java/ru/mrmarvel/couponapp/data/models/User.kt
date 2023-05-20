@@ -1,4 +1,4 @@
-package ru.mrmarvel.couponapp.data
+package ru.mrmarvel.couponapp.data.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

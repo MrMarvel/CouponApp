@@ -1,10 +1,9 @@
-package ru.mrmarvel.couponapp.data
+package ru.mrmarvel.couponapp.data.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.Calendar
 import java.util.Date
-@Entity
+@Entity(tableName = "coupon_category")
 data class CouponCategory(
     @PrimaryKey
     val id: Int,
