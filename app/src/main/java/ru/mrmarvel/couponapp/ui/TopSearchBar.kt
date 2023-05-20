@@ -34,7 +34,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ru.mrmarvel.couponapp.R
-import ru.mrmarvel.couponapp.data.User
+import ru.mrmarvel.couponapp.data.models.User
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -100,7 +100,7 @@ fun UserAvatar(modifier: Modifier = Modifier, user: User) {
 @Preview(showBackground = true)
 @Composable
 fun AvatarPreview() {
-    UserAvatar(user=User(1,""))
+    UserAvatar(user= User(1,""))
 }
 
 @Preview
@@ -112,7 +112,7 @@ fun TopSearchBar() {
             Box(Modifier.weight(1f)) {
                 SearchBar()
             }
-            UserAvatar(user=User(1,""))
+            UserAvatar(user= User(1,""))
         }
     }
 }
