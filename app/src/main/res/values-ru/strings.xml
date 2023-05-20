@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_button_shop_label">Каталог</string>
+    <string name="nav_button_home_label">Главная</string>
+</resources>

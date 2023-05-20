@@ -6,6 +6,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import ru.mrmarvel.couponapp.navigation.destinations.homeScreen
 import ru.mrmarvel.couponapp.navigation.destinations.shopScreen
 import ru.mrmarvel.couponapp.util.Constants.NAV_SHOP_SCREEN
 import ru.mrmarvel.couponapp.viewmodels.SharedViewModel
@@ -23,6 +24,7 @@ fun SetupNavigation(
         shopScreen(
             sharedViewModel = sharedViewModel
         )
+        homeScreen(sharedViewModel)
     }
 }
 @Preview

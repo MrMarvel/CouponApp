@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">CouponApp</string>
+    <string name="app_name" translatable="false">CouponApp</string>
+    <string name="nav_button_shop_label">Shop</string>
+    <string name="nav_button_home_label">Home</string>
 </resources>
