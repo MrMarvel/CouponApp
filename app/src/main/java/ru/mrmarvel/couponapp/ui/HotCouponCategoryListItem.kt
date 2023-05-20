@@ -1,7 +1,5 @@
 package ru.mrmarvel.couponapp.ui
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -21,10 +19,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import ru.mrmarvel.couponapp.R
-import ru.mrmarvel.couponapp.data.CouponCategory
+import ru.mrmarvel.couponapp.data.models.CouponCategory
 import ru.mrmarvel.couponapp.data.DataProvider
 import java.text.SimpleDateFormat
-import java.time.format.DateTimeFormatter
 import java.util.Calendar
 import java.util.Locale
 
@@ -59,7 +56,7 @@ fun HotCouponCategoryListItem(
                             .aspectRatio(1f)
                             .clip(CircleShape)
                             .border(2.dp, Color.Black, CircleShape),
-                        painter = painterResource(id = R.drawable.avatar_default),
+                        painter = painterResource(id = R.drawable.sanders),
                         contentScale = ContentScale.Crop,
                         contentDescription = "coupon image"
                     )
